@@ -123,7 +123,7 @@
                             $query->where('medications.id', $medication->id)
                                 ->where('prescription_medications.status', 'approved'); // تحقق من حالة الوصفة
                         })->exists())
-                       <form 
+                       {{-- <form 
                         action="{{ route('orders.index') }}" 
                         method="GET">
                             @csrf
@@ -131,7 +131,10 @@
                                     class="px-4 py-2 bg-teal-600 dark:bg-teal-700 text-white rounded-lg hover:bg-teal-700 dark:hover:bg-teal-800 transition-colors text-sm">
                                 طلب الدواء
                             </button>
-                        </form>
+                        </form> --}}
+                        <a
+                        class="px-4 py-2 bg-teal-600 dark:bg-teal-700 text-white rounded-lg hover:bg-teal-700 dark:hover:bg-teal-800 transition-colors text-sm"
+                        href="/orders" >طلب الدواء</a>
                     @else
                         <a href="{{ route('prescriptions.create') }}" 
                         class="px-4 py-2 bg-gray-500 dark:bg-gray-700 text-white rounded-lg cursor-not-allowed text-sm">
@@ -139,7 +142,7 @@
                         </a>
                     @endif
                 @else
-                    <form 
+                    {{-- <form 
                     action="{{ route('orders.index') }}" 
                     method="POST">
                         @csrf
@@ -147,7 +150,11 @@
                                 class="px-4 py-2 bg-teal-600 dark:bg-teal-700 text-white rounded-lg hover:bg-teal-700 dark:hover:bg-teal-800 transition-colors text-sm">
                                 طلب الدواء
                         </button>
-                    </form>
+                    </form> --}}
+
+                    <a
+                    class="px-4 py-2 bg-teal-600 dark:bg-teal-700 text-white rounded-lg hover:bg-teal-700 dark:hover:bg-teal-800 transition-colors text-sm"
+                    href="/orders" >طلب الدواء</a>
                 @endif
             </div>
         </div>

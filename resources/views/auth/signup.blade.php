@@ -55,6 +55,16 @@
                            dir="ltr">
                 </div>
 
+                <!-- address -->
+                <div>
+                    <label for="address" class="block text-gray-300 mb-2">العنوان</label>
+                    <input type="text" id="address" name="address" required
+                           class="w-full px-4 py-3 rounded-xl bg-white/10 border border-gray-300/20 
+                                  text-white placeholder-gray-400 focus:outline-none focus:border-teal-500
+                                  focus:ring-1 focus:ring-teal-500"
+                           dir="ltr">
+                </div>
+
                 <!-- Password Fields -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>

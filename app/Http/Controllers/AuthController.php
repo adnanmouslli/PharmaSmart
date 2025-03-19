@@ -70,6 +70,8 @@ class AuthController extends Controller
             'last_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'phone' => ['required', 'string', 'max:20', 'unique:users'],
+            'address' => ['required', 'string'],
+
             'password' => ['required', 'string', 'min:5', 'confirmed'],
             'terms' => ['required', 'accepted'],
         ], [
@@ -79,6 +81,7 @@ class AuthController extends Controller
             'email.email' => 'يرجى إدخال بريد إلكتروني صحيح',
             'email.unique' => 'البريد الإلكتروني مستخدم مسبقاً',
             'phone.required' => 'رقم الجوال مطلوب',
+            'address.required' => 'العنوان مطلوب',
             'phone.unique' => 'رقم الجوال مستخدم مسبقاً',
             'password.required' => 'كلمة المرور مطلوبة',
             'password.min' => 'كلمة المرور يجب أن تكون 5 أحرف على الأقل',
@@ -98,6 +101,7 @@ class AuthController extends Controller
             'last_name' => $request->last_name,
             'email' => $request->email,
             'phone' => $request->phone,
+            'address' => $request->address,
             'password' => Hash::make($request->password),
         ]);
 
