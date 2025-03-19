@@ -67,7 +67,7 @@
                 @if($reminder->end_date)
                     @php
                         $totalDays = $reminder->start_date->diffInDays($reminder->end_date);
-                        $remainingDays = now()->diffInDays($reminder->end_date);
+                        $remainingDays = (int)now()->diffInDays($reminder->end_date);
                         $progress = max(0, min(100, (($totalDays - $remainingDays) / $totalDays) * 100));
                     @endphp
                     <div class="mt-4">
@@ -185,7 +185,7 @@
                     </div>
 
                     <!-- طريقة التنبيه -->
-                    <div>
+                    {{-- <div>
                         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
                             طريقة التنبيه
                         </label>
@@ -203,7 +203,7 @@
                                 <span class="mr-2 text-gray-700 dark:text-gray-300">كلاهما</span>
                             </label>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="flex items-center justify-end gap-4 mt-8">
                         <button type="button" onclick="closeReminderModal()"

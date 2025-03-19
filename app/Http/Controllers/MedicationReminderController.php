@@ -44,7 +44,7 @@ class MedicationReminderController extends Controller
             'start_date' => 'required|date',
             'end_date' => 'nullable|date|after_or_equal:start_date',
             'instructions' => 'nullable|string',
-            'notification_method' => 'required|in:email,sms,both',
+            // 'notification_method' => 'required|in:email,sms,both',
         ]);
 
         $reminder = MedicationReminder::create([
@@ -73,7 +73,7 @@ class MedicationReminderController extends Controller
             'start_date' => 'required|date',
             'end_date' => 'nullable|date|after_or_equal:start_date',
             'instructions' => 'nullable|string',
-            'notification_method' => 'required|in:email,sms,both',
+            // 'notification_method' => 'required|in:email,sms,both',
         ]);
 
         $reminder->update($validated);
