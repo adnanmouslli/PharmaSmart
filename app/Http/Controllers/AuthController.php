@@ -42,6 +42,14 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
         
         if (Auth::attempt($credentials, $request->filled('remember'))) {
+            
+             // التحقق إذا كان المستخدم مديرًا
+             
+             if (Auth::user()->is_admin) {
+                 return redirect()->route('admin.dashboard')
+                 ->with('success', 'تم تسجيل الدخول بنجاح');
+                }
+                
             $request->session()->regenerate();
             return redirect()->route('home.index')
                 ->with('success', 'تم تسجيل الدخول بنجاح');
